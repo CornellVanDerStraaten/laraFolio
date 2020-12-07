@@ -24,6 +24,11 @@ use Illuminate\Support\Facades\Route;
  */
 Route::get('/', function () { return view('welcome'); })->name('home');
 
+// Admin
+Route::get('/admin', 'AdminController@showLogin')->name('admin.showLogin');
+Route::post('/admin', 'AdminController@logIn')->name('admin.login');
+Route::get('/admin/dashboard', 'AdminController@showDashboard')->name('admin.showDashboard');
+
 /**
  * TODO Restful Routes
  *
