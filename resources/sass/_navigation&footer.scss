@@ -1,0 +1,115 @@
+.nav {
+    font-family: 'Montserrat', sans-serif;
+    &__wrapper {
+        margin: 20px 20px;
+        display: flex;
+        justify-content: space-between;
+        &-logo {
+            width: 40px;
+            align-self: center;
+        }
+    }
+    &__burger {
+        display: block;
+        cursor: pointer;
+        & > .burger-line {
+            width: 35px;
+            height: 3px;
+            background-color: $mobileLinks;
+            border-radius: 5px;
+            margin: 7px;
+            transition: .5s ease-in-out;
+        }
+    }
+    &__link-wrapper {
+        position: absolute;
+        top: 80px;
+        right: 0;
+        background-color: rgb(100, 100, 100);
+        border-radius: 10px 0 0 10px;
+        transform: translateX(100%);
+        transition: transform 1s cubic-bezier(0.275, 0.885, 0.32, 0.975);
+        &-ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        &-link {
+            opacity: 0;
+            text-align: center;
+            padding: 20px;
+            padding-bottom: 15px;
+            & > .a-tag_component {
+                padding-bottom: 5px;
+                color: $mobileLinks;
+                font-weight: 500;
+                text-transform: uppercase;
+                transition: .3s ease;
+                &:hover {
+                    border-bottom: 2px solid ;
+                    border-image-source: linear-gradient(45deg, $secondary, $primary);
+                    border-image-slice: 1;
+                    color: white;
+                }
+            }
+        }
+    }
+}
+
+.nav-active {
+    transform: translateX(0%);
+}
+.toggle .line-top {
+    transform: rotate(45deg) translate(5px, 10px);
+}
+.toggle .line-bottom {
+    transform: rotate(-45deg) translate(5px, -11px);
+}
+@keyframes navLinkFade {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+@keyframes navLinkFadeBack {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .nav {
+        font-family: 'Montserrat', sans-serif;
+        &__wrapper {
+            margin: 30px 30px;
+            &-logo {
+                width: 50px;
+            }
+        }
+        &__burger {
+            display: none;
+        }
+        &__link-wrapper {
+            position: relative;
+            transform: translate(0);
+            top: 0;
+            background-color: transparent;
+            &-ul {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+            }
+            &-link {
+                opacity: 1;
+            }
+        }
+    }
+}
+
