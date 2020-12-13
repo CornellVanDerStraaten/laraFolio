@@ -100,7 +100,8 @@ var navSlide = function navSlide() {
   console.log(burger); // Toggle Nav Slide
 
   burger.addEventListener('click', function () {
-    navWrapper.classList.toggle('nav-active'); // Animate Links
+    navWrapper.classList.toggle('nav-active');
+    burger.classList.toggle('toggle'); // Animate Links
 
     navLinks.forEach(function (link, index) {
       if (link.style.animation) {

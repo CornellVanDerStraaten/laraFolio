@@ -60,10 +60,14 @@
     transform: translateX(0%);
 }
 .toggle .line-top {
-    transform: rotate(45deg) translate(5px, 10px);
+    transform: rotate(-45deg) translate(-3px, 3px);
+}
+.toggle .line-middle {
+    transition: .2 s;
+    opacity: 0;
 }
 .toggle .line-bottom {
-    transform: rotate(-45deg) translate(5px, -11px);
+    transform: rotate(45deg) translate(-10px, -11px);
 }
 @keyframes navLinkFade {
     from {
