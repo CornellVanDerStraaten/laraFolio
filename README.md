@@ -5,7 +5,7 @@ In deze repo staat een extra map, [Project_Assets&Details]. Hier komen de dingen
 
 ## Project Assets
 
-[Styleboard](../blob/tree/main/Project_Assets%26Details/Styleboard.jpg)
+[Styleboard](https://github.com/CornellVanDerStraaten/laraFolio/blob/main/Project_Assets%26Details/StyleBoard.jpg "Naar styleboard")
 
 [Project_Assets&Details]: https://github.com/CornellVanDerStraaten/laraFolio/tree/main/Project_Assets%26Details
 
