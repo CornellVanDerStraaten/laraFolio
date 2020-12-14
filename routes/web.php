@@ -24,10 +24,14 @@ use Illuminate\Support\Facades\Route;
  */
 Route::get('/', 'WebsiteController@getHome')->name('home');
 
-// Admin
+// Login
 Route::get('/login', 'loginController@showLogin')->name('login');
 Route::post('/login', 'AdminController@logIn')->name('login.process');
 
+// Login->Forgot Password (FP)
+Route::get('/forgot-password', 'loginController@FPform')->name('FP');
+
+// Admin
 Route::get('/admin/dashboard', 'AdminController@showDashboard')->name('admin.showDashboard');
 
 /**
