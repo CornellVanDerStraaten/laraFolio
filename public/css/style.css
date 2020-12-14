@@ -7,6 +7,7 @@ body {
   overflow-x: hidden;
   width: 100vw;
   height: 100vh;
+  min-height: 100vh;
 }
 
 body {
@@ -95,7 +96,7 @@ body {
 }
 
 .toggle .line-middle {
-  transition: 0.2 s;
+  transition: 0.2s;
   opacity: 0;
 }
 
@@ -180,5 +181,41 @@ body {
   .nav__link-wrapper-link {
     opacity: 1;
   }
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
+}
+
+.footer__socials {
+  display: flex;
+  flex-direction: row;
+  width: 100px;
+  justify-content: space-around;
+  margin: 0 auto;
+}
+
+.footer__socials-background {
+  font-size: 25px;
+}
+
+.footer__socials-background > a {
+  color: white;
+  transition: 0.3s;
+}
+
+.footer__socials-background > a:hover {
+  color: #b1b1b1;
+}
+
+.footer__copyright {
+  font-size: 12px;
+  margin-top: 5px;
 }
 

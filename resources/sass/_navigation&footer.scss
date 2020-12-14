@@ -63,7 +63,7 @@
     transform: rotate(-45deg) translate(-3px, 3px);
 }
 .toggle .line-middle {
-    transition: .2 s;
+    transition: .2s;
     opacity: 0;
 }
 .toggle .line-bottom {
@@ -116,4 +116,38 @@
         }
     }
 }
+
+
+// Footer
+.footer {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    position: absolute;
+    bottom: 0;
+    width: 100vw;
+    &__socials {
+        display: flex;
+        flex-direction: row;
+        width: 100px;
+        justify-content: space-around;
+        margin: 0 auto;
+        &-background {
+            font-size: 25px;
+            & > a {
+                color: white;
+                transition: .3s;
+            }
+            & > a:hover {
+                color: #b1b1b1;
+            }
+        }
+    }
+    &__copyright {
+        font-size: 12px;
+        margin-top: 5px;
+    }
+}
+
 

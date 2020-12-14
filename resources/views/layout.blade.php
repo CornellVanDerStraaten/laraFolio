@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="author" content="Cornell van der Straaten">
     <title>Portfolio Cornell van der Straaten</title>
+    <script src="https://kit.fontawesome.com/1eb7c10cba.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
 <body>
@@ -33,8 +34,12 @@
         @show
     </main>
 
-    <footer>
-        Dit is de footer in de layout
+    <footer class="footer">
+        <div class="footer__socials">
+            <span class="footer__socials-background"><a href="#"><i class="fab fa-linkedin-in"></i></a></span>
+            <span class="footer__socials-background"><a href="#"><i class="fab fa-github"></i></a></span>
+        </div>
+        <p class="footer__copyright">Copyright © 2020 Cornell van der Straaten</p>
     </footer>
     <script src="{{ asset('/js/mixedJS.js') }}"></script>
 </body>
