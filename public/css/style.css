@@ -181,6 +181,18 @@ body {
   .nav__link-wrapper-link {
     opacity: 1;
   }
+
+  .nav__link-wrapper-link > .nav-button {
+    background-color: #555555;
+    padding: 10px 20px !important;
+    border-radius: 5px;
+  }
+
+  .nav__link-wrapper-link > .nav-button:hover {
+    background-color: #48DBFB;
+    background: linear-gradient(45deg, #48DBFB, #4E48FB);
+    border: none !important;
+  }
 }
 
 .footer {

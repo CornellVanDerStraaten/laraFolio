@@ -39,6 +39,8 @@
             text-align: center;
             padding: 20px;
             padding-bottom: 15px;
+
+
             & > .a-tag_component {
                 padding-bottom: 5px;
                 color: $mobileLinks;
@@ -112,6 +114,16 @@
             }
             &-link {
                 opacity: 1;
+                & > .nav-button {
+                    background-color: $unimportantButton;
+                    padding: 10px 20px !important;
+                    border-radius: 5px;
+                    &:hover {
+                        background-color: $primary;
+                        background: linear-gradient(45deg, $primary, $secondary);
+                        border: none !important;
+                    }
+                }
             }
         }
     }
