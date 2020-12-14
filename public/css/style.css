@@ -186,6 +186,10 @@ main {
     opacity: 1;
   }
 
+  .nav__link-wrapper-link > .a-tag_component {
+    border-bottom: 2px #dddddd;
+  }
+
   .nav__link-wrapper-link > .nav-button {
     background-color: #555555;
     padding: 10px 20px !important;

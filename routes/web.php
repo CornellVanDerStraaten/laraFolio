@@ -25,8 +25,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'WebsiteController@getHome')->name('home');
 
 // Admin
-Route::get('/admin', 'AdminController@showLogin')->name('admin.showLogin');
-Route::post('/admin', 'AdminController@logIn')->name('admin.login');
+Route::get('/login', 'loginController@showLogin')->name('login');
+Route::post('/login', 'AdminController@logIn')->name('login.process');
+
 Route::get('/admin/dashboard', 'AdminController@showDashboard')->name('admin.showDashboard');
 
 /**
