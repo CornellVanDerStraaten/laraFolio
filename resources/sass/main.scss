@@ -1,5 +1,26 @@
-$primary: black;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400&display=swap');
+
+// Variables
+@import 'variables';
+
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    width: 100vw;
+    height: 100vh;
+    min-height: 100vh;
+}
 
 body {
-    background-color: $primary;
+    background-color: $bg;
+    color: white;
+    overflow-x: hidden;
 }
+
+// Components ( Buttons, links etc. )
+@import 'components';
+
+// Misc
+@import 'navigation&footer';

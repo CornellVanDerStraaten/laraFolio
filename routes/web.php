@@ -22,7 +22,7 @@ use Illuminate\Support\Facades\Route;
 /**
  * DOING Restful Routes
  */
-Route::get('/', function () { return view('welcome'); })->name('home');
+Route::get('/', 'WebsiteController@getHome')->name('home');
 
 // Admin
 Route::get('/admin', 'AdminController@showLogin')->name('admin.showLogin');

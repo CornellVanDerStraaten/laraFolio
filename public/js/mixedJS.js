@@ -93,7 +93,27 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-console.log('Ik ben gemixed');
+var navSlide = function navSlide() {
+  var burger = document.querySelector('.nav__burger');
+  var navWrapper = document.querySelector('.nav__link-wrapper');
+  var navLinks = document.querySelectorAll('.nav__link-wrapper-ul li');
+  console.log(burger); // Toggle Nav Slide
+
+  burger.addEventListener('click', function () {
+    navWrapper.classList.toggle('nav-active');
+    burger.classList.toggle('toggle'); // Animate Links
+
+    navLinks.forEach(function (link, index) {
+      if (link.style.animation) {
+        link.style.animation = '';
+      } else {
+        link.style.animation = "navLinkFade .8s ease forwards ".concat(index / 7, "s");
+      }
+    });
+  });
+};
+
+navSlide();
 
 /***/ }),
 
