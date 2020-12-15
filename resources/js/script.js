@@ -3,9 +3,6 @@ const navSlide = () => {
     const navWrapper = document.querySelector('.nav__link-wrapper');
     const navLinks = document.querySelectorAll('.nav__link-wrapper-ul li');
 
-
-
-    console.log(burger);
     // Toggle Nav Slide
     burger.addEventListener('click', () =>{
         navWrapper.classList.toggle('nav-active');
@@ -22,3 +19,5 @@ const navSlide = () => {
 };
 
 navSlide();
+
+

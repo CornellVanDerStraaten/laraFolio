@@ -96,8 +96,7 @@
 var navSlide = function navSlide() {
   var burger = document.querySelector('.nav__burger');
   var navWrapper = document.querySelector('.nav__link-wrapper');
-  var navLinks = document.querySelectorAll('.nav__link-wrapper-ul li');
-  console.log(burger); // Toggle Nav Slide
+  var navLinks = document.querySelectorAll('.nav__link-wrapper-ul li'); // Toggle Nav Slide
 
   burger.addEventListener('click', function () {
     navWrapper.classList.toggle('nav-active');
@@ -117,6 +116,24 @@ navSlide();
 
 /***/ }),
 
+/***/ "./resources/js/submit.js":
+/*!********************************!*\
+  !*** ./resources/js/submit.js ***!
+  \********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+var form = document.querySelector('.login__form');
+
+if (document.getElementById('submitTriangle')) {
+  var submitButton = document.getElementById('submitTriangle');
+  submitButton.addEventListener('click', function () {
+    form.submit();
+  });
+}
+
+/***/ }),
+
 /***/ "./resources/sass/main.scss":
 /*!**********************************!*\
   !*** ./resources/sass/main.scss ***!
@@ -129,13 +146,14 @@ navSlide();
 /***/ }),
 
 /***/ 0:
-/*!*****************************************************************!*\
-  !*** multi ./resources/js/script.js ./resources/sass/main.scss ***!
-  \*****************************************************************/
+/*!******************************************************************************************!*\
+  !*** multi ./resources/js/script.js ./resources/js/submit.js ./resources/sass/main.scss ***!
+  \******************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! C:\xampp\htdocs\bap\laraFolio\resources\js\script.js */"./resources/js/script.js");
+__webpack_require__(/*! C:\xampp\htdocs\bap\laraFolio\resources\js\submit.js */"./resources/js/submit.js");
 module.exports = __webpack_require__(/*! C:\xampp\htdocs\bap\laraFolio\resources\sass\main.scss */"./resources/sass/main.scss");
 
 
