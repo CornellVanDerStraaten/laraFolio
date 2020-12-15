@@ -123,6 +123,7 @@ navSlide();
 /*! no static exports found */
 /***/ (function(module, exports) {
 
+
 var form = document.querySelector('.login__form');
 
 if (document.getElementById('submitTriangle')) {
