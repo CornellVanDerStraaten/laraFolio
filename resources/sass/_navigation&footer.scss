@@ -113,6 +113,9 @@
                 justify-content: space-between;
             }
             &-link {
+                & > .a-tag_component {
+                    border-bottom: 2px $mobileLinks;
+                }
                 opacity: 1;
                 & > .nav-button {
                     background-color: $unimportantButton;

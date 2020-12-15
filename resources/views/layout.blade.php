@@ -12,7 +12,7 @@
 <body>
     <nav class="nav">
         <div class="nav__wrapper">
-            <img src="{{ asset('img/logo.png') }}" alt="Logo van Cornell, zijn initialen." class="nav__wrapper-logo">
+            <a href="{{ route('home') }}"><img src="{{ asset('img/logo.png') }}" alt="Logo van Cornell, zijn initialen." class="nav__wrapper-logo"></a>
             <div class="nav__link-wrapper">
                 <ul class="nav__link-wrapper-ul">
                     <li class="nav__link-wrapper-link"><a href="#" class="a-tag_component">projecten<span class="slider"></span></a></li>
@@ -41,6 +41,10 @@
         </div>
         <p class="footer__copyright">Copyright © 2020 Cornell van der Straaten</p>
     </footer>
+
     <script src="{{ asset('/js/mixedJS.js') }}"></script>
+    @section('script')
+
+    @show
 </body>
 </html>

@@ -19,8 +19,16 @@ body {
     overflow-x: hidden;
 }
 
+main {
+    margin: 0 30px;
+
+}
+
 // Components ( Buttons, links etc. )
 @import 'components';
+
+// Pages
+@import 'login&forgotPassword';
 
 // Misc
 @import 'navigation&footer';
