@@ -24,6 +24,195 @@ main {
   text-decoration: none;
 }
 
+.loginAligner {
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.loginControllerPageContainer {
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.loginHeaderText {
+  font-size: 60px;
+  text-transform: uppercase;
+  margin-bottom: 0px;
+  font-weight: 400;
+}
+
+.loginHeaderSubtext {
+  font-size: 26px;
+  font-weight: 500;
+  color: #8b8b8b;
+  margin-top: 0px;
+}
+
+.login__container {
+  position: relative;
+}
+
+.login__form {
+  background-color: #171717;
+  display: flex;
+  flex-direction: column;
+  padding: 5px 20px;
+  border-radius: 15px;
+  width: 70vw;
+  max-width: 440px;
+  position: relative;
+  z-index: 4;
+  transition: 0.4s ease-in-out;
+  height: 105px;
+}
+
+.login__input {
+  border: none;
+  padding: 15px 5px;
+  padding-left: 0;
+  font-size: 18px;
+  width: 50vw;
+  max-width: 360px;
+  background-color: transparent;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  position: relative;
+}
+
+.login__input:focus {
+  outline: none;
+}
+
+.login__input::-moz-placeholder {
+  font-family: "Montserrat", sans-serif;
+}
+
+.login__input:-ms-input-placeholder {
+  font-family: "Montserrat", sans-serif;
+}
+
+.login__input::placeholder {
+  font-family: "Montserrat", sans-serif;
+}
+
+.login__input:-internal-autofill-selected {
+  background-color: transparent !important;
+  color: white !important;
+  -webkit-appearance: none !important;
+     -moz-appearance: none !important;
+          appearance: none !important;
+  background-image: none !important;
+}
+
+.login__auth-hider {
+  position: relative;
+  width: 0;
+  z-index: 5;
+}
+
+.auth-input {
+  position: absolute;
+  z-index: 3;
+  top: 50px;
+  left: 15px;
+  transition: 0.4s ease-in-out;
+}
+
+.hide_auth {
+  opacity: 0;
+}
+
+.login-auth-input-show {
+  height: 170px;
+}
+
+.auth-input-show {
+  opacity: 1;
+  top: auto;
+  left: auto;
+  position: relative;
+}
+
+.border-top {
+  border-top: 2px solid #313131;
+}
+
+.border-top-bottom {
+  border-top: 2px solid #313131;
+  border-bottom: 2px solid #313131;
+}
+
+.form-submit__container {
+  position: absolute;
+  z-index: 10;
+  right: -38px;
+  top: 20px;
+}
+
+.form-submit__dark-background {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #171717;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+.form-submit__light-background {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #313131;
+  display: flex;
+  align-items: center;
+}
+
+.form-submit__submit-triangle {
+  margin: 0 auto;
+  margin-left: 21px;
+  width: 0;
+  height: 0;
+  border-top: 15px solid transparent;
+  border-left: 25px solid #313131;
+  border-bottom: 15px solid transparent;
+  cursor: pointer;
+}
+
+.loginFooterText {
+  text-align: left;
+  padding-left: 20px;
+  color: #171717;
+  font-weight: 500;
+}
+
+.forgotPasswordLink {
+  font-weight: 500;
+  margin-left: 10px;
+  transition: 0.25s;
+  color: #e3e3e3;
+}
+
+.forgotPasswordLink:hover {
+  color: #979797;
+}
+
+.melding-text {
+  font-family: "Montserrat", sans-serif;
+  padding: 10px 5px;
+  font-size: 16px;
+  border: #ffbd44 2px solid;
+  border-radius: 15px;
+  background-color: #171717;
+  color: #313131;
+  font-weight: 500;
+}
+
 .nav {
   font-family: "Montserrat", sans-serif;
 }
