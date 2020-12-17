@@ -19,4 +19,8 @@ class AdminController extends Controller
     public function showNavigation() {
         return view('adminNav');
     }
+
+    public function toProjectDashboard() {
+        return view('adminProjectDashboard');
+    }
 }

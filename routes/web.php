@@ -29,8 +29,10 @@ Route::get('/login', 'WebsiteController@showLogin')->name('login');
 Route::get('/forgot-password', 'loginController@FPform')->name('FP');
 
 // Admin
-Route::get('/admin', 'AdminController@showNavigation')->name('admin.showNavigation');
-Route::get('/admin/dashboard', 'AdminController@showDashboard')->name('admin.showDashboard');
+Route::get('/admin', 'AdminController@showNavigation')->name('admin');
+Route::get('/admin/projecten', 'AdminController@toProjectDashboard')->name('admin.projects');
+
+
 
 // Projecten
 Route::get('/projecten/maken', 'ProjectController@create')->name('projecten.create');

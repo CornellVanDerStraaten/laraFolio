@@ -1,0 +1,79 @@
+.adminNav__container {
+    margin: 0 auto;
+    margin-top: 150px;
+    width: 80vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 50px;
+    font-family: 'Montserrat', sans-serif;
+
+}
+.adminNav {
+    &__card {
+        border: 2px solid rgba(255, 255, 255, 0.329);
+        border-radius: 15px;
+        box-shadow: 5px 5px 10px rgba(231, 231, 231, 0.384);
+    }
+    &__card-header {
+        display: flex;
+        flex-direction: row;
+    }
+    &__card-icon {
+        font-size: 30px;
+        width: 50px;
+        padding: 10px;
+    }
+    &__card-title {
+        font-size: 30px;
+        margin: 0;
+        padding: 10px;
+        padding-left: 0;
+        font-weight: 500;
+        text-transform: uppercase;
+    }
+    &__card-text {
+        font-size: 16px;
+        padding: 0 10px;
+        height: 50px;
+    }
+    &__card-footer {
+        padding: 10px;
+        display: flex;
+        justify-content: flex-end;
+    }
+    &__card-link {
+        color: white;
+        margin: 10px 10px 10px 10px;
+        text-transform: uppercase;
+        font-weight: 500;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .adminNav__container {
+        display: flex;
+        flex-direction: column;
+        width: 75vw;
+        margin-top: 10px;
+    }
+    .adminNav {
+        &__card-icon {
+            font-size: 20px;
+            width: 20px;
+        }
+        &__card-title {
+            font-size: 20px;
+        }
+        &__card-text {
+            margin-top: 5px;
+            height: 75px;
+            font-size: 14px;
+        }
+        &__card-link {
+            font-size: 14px;
+            float: none;
+            margin: 0 auto;
+        }
+    }
+}
