@@ -21,7 +21,6 @@ body {
 
 main {
     margin: 0 30px;
-
 }
 
 // Components ( Buttons, links etc. )
@@ -29,6 +28,7 @@ main {
 
 // Pages
 @import 'login&forgotPassword';
+@import 'adminNav';
 
 // Misc
 @import 'navigation&footer';
