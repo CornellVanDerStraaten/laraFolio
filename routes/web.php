@@ -35,7 +35,9 @@ Route::get('/admin/projecten', 'AdminController@toProjectDashboard')->name('admi
 
 
 // Projecten
-Route::get('/projecten/maken', 'ProjectController@create')->name('projecten.create');
+Route::get('/project/maken', 'ProjectController@create')->name('projects.create');
+Route::post('/projecten', 'ProjectController@store')->name('projects.store');
+
 
 /**
  * TODO Restful Routes
