@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400&display=swap');
 
 // Variables
-@import 'variables';
+@import 'variabelen';
 
 html, body {
     margin: 0;
@@ -21,7 +21,6 @@ body {
 
 main {
     margin: 0 30px;
-
 }
 
 // Components ( Buttons, links etc. )
@@ -29,6 +28,7 @@ main {
 
 // Pages
 @import 'login&forgotPassword';
+@import 'adminNav';
 
 // Misc
 @import 'navigation&footer';

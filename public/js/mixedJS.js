@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = 1);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -123,7 +123,6 @@ navSlide();
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-
 var form = document.querySelector('.login__form');
 
 if (document.getElementById('submitTriangle')) {
@@ -135,27 +134,15 @@ if (document.getElementById('submitTriangle')) {
 
 /***/ }),
 
-/***/ "./resources/sass/main.scss":
-/*!**********************************!*\
-  !*** ./resources/sass/main.scss ***!
-  \**********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
-/***/ 0:
-/*!******************************************************************************************!*\
-  !*** multi ./resources/js/script.js ./resources/js/submit.js ./resources/sass/main.scss ***!
-  \******************************************************************************************/
+/***/ 1:
+/*!***************************************************************!*\
+  !*** multi ./resources/js/script.js ./resources/js/submit.js ***!
+  \***************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! C:\xampp\htdocs\bap\laraFolio\resources\js\script.js */"./resources/js/script.js");
-__webpack_require__(/*! C:\xampp\htdocs\bap\laraFolio\resources\js\submit.js */"./resources/js/submit.js");
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\bap\laraFolio\resources\sass\main.scss */"./resources/sass/main.scss");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\bap\laraFolio\resources\js\submit.js */"./resources/js/submit.js");
 
 
 /***/ })
