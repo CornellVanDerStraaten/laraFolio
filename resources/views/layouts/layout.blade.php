@@ -15,9 +15,26 @@
             <a href="{{ route('home') }}"><img src="{{ asset('img/logo.png') }}" alt="Logo van Cornell, zijn initialen." class="nav__wrapper-logo"></a>
             <div class="nav__link-wrapper">
                 <ul class="nav__link-wrapper-ul">
+                    @guest
                     <li class="nav__link-wrapper-link"><a href="#" class="a-tag_component">projecten<span class="slider"></span></a></li>
                     <li class="nav__link-wrapper-link"><a href="#" class="a-tag_component">artikels</a></li>
                     <li class="nav__link-wrapper-link"><a href="#" class="a-tag_component nav-button">Contact</a></li>
+                    @else
+                    <li class="nav__link-wrapper-link"><a href="{{ route('admin') }}" class="a-tag_component">Admin</a></li>
+                    <li class="nav__link-wrapper-link"><a class="a-tag_component nav-button dropdown-item" href="{{ route('logout') }}"
+                            onclick="event.preventDefault();
+                                        document.getElementById('logout-form').submit();">
+                            {{ __('Logout') }}
+                        </a>
+
+                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                         @csrf
+                     </form>
+                    </li>
+
+
+                    @endguest
+
                 </ul>
             </div>
             <div class="nav__burger" id="burgerMenu">
