@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layouts.layout')
 
 @section('content')
 <div class="loginAligner">
@@ -6,11 +6,11 @@
         <h1 class="loginHeaderText">login</h1>
         <h2 class="loginHeaderSubtext">Vul hier jouw gegevens in</h2>
         <div class="login__container">
-            <form action="{{ route('login.process') }}" class="login__form" method="POST">
+            <form action="{{ route('login') }}" class="login__form" method="POST">
                 @csrf
                 <span class="login__auth-hider">
-                    <input type="text" name="email" class="login__input" placeholder="email" required value="{{ old('email') }}">
-                    <input type="password" name="wachtwoord" class="login__input border-top" placeholder="wachtwoord" required value="{{ old('wachtwoord') }}">
+                    <input type="email" name="email" class="login__input" placeholder="email" required value="{{ old('email') }}" autocomplete="email">
+                    <input type="password" name="password" class="login__input border-top" placeholder="wachtwoord" required  autocomplete="current-password">
                 </span>
                 <input type="text" name="auth_code" class="login__input auth-input hide_auth" placeholder="authorizatie code" required>
 

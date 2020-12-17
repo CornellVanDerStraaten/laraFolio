@@ -6,8 +6,7 @@ use Illuminate\Http\Request;
 
 class WebsiteController extends Controller
 {
-    public function getHome() {
-      return view('home');
+    public function showLogin() {
+        return view('login');
     }
-
 }
