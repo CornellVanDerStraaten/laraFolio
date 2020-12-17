@@ -19,14 +19,7 @@ use Illuminate\Support\Facades\Auth;
 // });
 
 
-/**
- * DONE Restful Routes
- */
 
-
-/**
- * DOING Restful Routes
- */
 Route::get('/', 'HomeController@index')->name('home');
 
 // Login
@@ -36,8 +29,11 @@ Route::get('/login', 'WebsiteController@showLogin')->name('login');
 Route::get('/forgot-password', 'loginController@FPform')->name('FP');
 
 // Admin
-Route::get('/admin/navigatie', 'AdminController@showNavigation')->name('admin.showNavigation');
+Route::get('/admin', 'AdminController@showNavigation')->name('admin.showNavigation');
 Route::get('/admin/dashboard', 'AdminController@showDashboard')->name('admin.showDashboard');
+
+// Projecten
+Route::get('/projecten/maken', 'ProjectController@create')->name('projecten.create');
 
 /**
  * TODO Restful Routes
@@ -52,7 +48,6 @@ Route::get('/admin/dashboard', 'AdminController@showDashboard')->name('admin.sho
  *
  * Projecten
  * Route::get('/projecten', 'ProjectController@index')->name('projecten');
- * Route::get('/projecten/maken', 'ProjectController@create')->name('projecten.create');
  * Route::post('/projecten', 'ProjectController@store')->name('projecten.store');
  * Route::get('/projecten/{slug}', 'ProjectController@show')->name('projecten.show');
  * Route::get('/projecten/{slug}/aanpassen', 'ProjectController@edit')->name('projecten.edit');
