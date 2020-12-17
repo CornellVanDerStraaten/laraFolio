@@ -23,13 +23,23 @@
                     </div>
                 </div>
             </div>
-            <p class="loginFooterText">wachtwoord vergeten? <a class="forgotPasswordLink a-tag_component" href="{{ route('FP') }}">klik hier</a></p>
+            <p class="loginFooterText">wachtwoord vergeten? @if (Route::has('password.request'))
+                <a class="forgotPasswordLink a-tag_component" href="{{ route('password.request') }}">
+                    {{ __('klik hier') }}
+                </a>
+            @endif </p>
         </div>
-        @foreach ($errors as $error)
-            <p class="melding-text">
-                {{ $error }}<br><br>
+        {{-- <a class="forgotPasswordLink a-tag_component" href="{{ route('FP') }}">klik hier</a> --}}
+        @error('password')
+            <p class="melding-text" role="alert">
+                <strong>{{ $message }}</strong>
             </p>
-        @endforeach
+        @enderror
+        @error('email')
+        <span class="melding-text" role="alert">
+            <strong>{{ $message }}</strong>
+        </span>
+    @enderror
     </div>
 </div>
 
