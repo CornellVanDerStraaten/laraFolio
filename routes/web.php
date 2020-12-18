@@ -37,6 +37,8 @@ Route::get('/admin/projecten', 'AdminController@toProjectDashboard')->name('admi
 // Projecten
 Route::get('/project/maken', 'ProjectController@create')->name('projects.create');
 Route::post('/projecten', 'ProjectController@store')->name('projects.store');
+Route::get('/project/{slug}', 'WebsiteController@showSpecificProject')->name('projecten.show');
+
 
 
 /**
@@ -52,8 +54,6 @@ Route::post('/projecten', 'ProjectController@store')->name('projects.store');
  *
  * Projecten
  * Route::get('/projecten', 'ProjectController@index')->name('projecten');
- * Route::post('/projecten', 'ProjectController@store')->name('projecten.store');
- * Route::get('/projecten/{slug}', 'ProjectController@show')->name('projecten.show');
  * Route::get('/projecten/{slug}/aanpassen', 'ProjectController@edit')->name('projecten.edit');
  * Route::put('/projecten/{slug}', 'ProjectController@update')->name('projecten.update');
  * Route::delete('/projecten/{slug}', 'ProjectController@destroy')->name('projecten.destroy');

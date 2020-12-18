@@ -2,13 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Project;
 use Illuminate\Http\Request;
 
-class ProjectController extends Controller
+class ArtikelController extends Controller
 {
-
-     /**
+         /**
      * Create a new controller instance.
      *
      * @return void
@@ -36,7 +34,7 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        return view('createProject');
+        return view('createArtikel');
     }
 
     /**
@@ -48,7 +46,7 @@ class ProjectController extends Controller
     public function store(Request $request)
     {
 
-        Project::create(request()->validate([
+        Artikel::create(request()->validate([
             'title'         => 'required|min:5|max:60',
             'keywords'      => 'required',
             'live_link'     => 'nullable|url|unique:table,column,except,id',
@@ -58,17 +56,6 @@ class ProjectController extends Controller
             'content'       => 'required',
             'published_date'=> 'required'
         ]));
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
     }
 
     /**
