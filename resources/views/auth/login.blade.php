@@ -29,7 +29,7 @@
                 </a>
             @endif </p>
         </div>
-        {{-- <a class="forgotPasswordLink a-tag_component" href="{{ route('FP') }}">klik hier</a> --}}
+
         @error('password')
             <p class="melding-text" role="alert">
                 <strong>{{ $message }}</strong>
