@@ -230,6 +230,20 @@ table {
   margin: 0 auto;
 }
 
+.table {
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+}
+
+.table > tr {
+  font-size: 30px;
+  margin: 10px 0;
+}
+
+.table > tr > td > h1 {
+  font-size: 60px;
+}
+
 .voorbeeld-table {
   font-family: "Montserrat", sans-serif;
   display: flex;

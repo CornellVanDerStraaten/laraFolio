@@ -46,16 +46,16 @@ class ArtikelController extends Controller
     public function store(Request $request)
     {
 
-        Artikel::create(request()->validate([
-            'title'         => 'required|min:5|max:60',
-            'keywords'      => 'required',
-            'live_link'     => 'nullable|url|unique:table,column,except,id',
-            'github_link'   => 'nullable|url',
-            'slug'          => 'required|alpha_dash',
-            'active'        => 'sometimes',
-            'content'       => 'required',
-            'published_date'=> 'required'
-        ]));
+        // Artikel::create(request()->validate([
+        //     'title'         => 'required|min:5|max:60',
+        //     'keywords'      => 'required',
+        //     'live_link'     => 'nullable|url|unique:table,column,except,id',
+        //     'github_link'   => 'nullable|url',
+        //     'slug'          => 'required|alpha_dash',
+        //     'active'        => 'sometimes',
+        //     'content'       => 'required',
+        //     'published_date'=> 'required'
+        // ]));
     }
 
     /**
