@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Project;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -21,6 +23,8 @@ class AdminController extends Controller
     }
 
     public function toProjectDashboard() {
-        return view('adminProjectDashboard');
+
+
+        return view('adminProjectDashboard', ['projects' => Project::all()]);
     }
 }

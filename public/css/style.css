@@ -36,6 +36,29 @@ main {
   border: none !important;
 }
 
+.no-margin {
+  margin: 0;
+}
+
+.dashboardHello {
+  font-family: "Nunito", sans-serif;
+  font-size: 26px;
+  margin-bottom: 5px;
+}
+
+.dashboardHello-subtext {
+  color: #CCCCCC;
+  font-family: "Nunito", sans-serif;
+  font-size: 16px;
+  margin-top: 0;
+}
+
+.dashboard-buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
 .loginAligner {
   height: 60vh;
   display: flex;
@@ -342,6 +365,56 @@ table {
     float: none;
     margin: 0 auto;
   }
+}
+
+.projectDashboard__div {
+  margin: 0 5vw;
+}
+
+.projectDashboard__topLine {
+  font-family: "Montserrat", sans-serif;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.projectDashboard__topLine-button {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+}
+
+.projectDashboard__topLine-button > p {
+  text-transform: uppercase;
+}
+
+.projectDashboard__topLine-delete {
+  color: white;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.2s ease-in-out;
+  display: flex;
+  align-items: center;
+}
+
+.projectDashboard__topLine-delete:hover {
+  color: red;
+}
+
+.projectDashboard__allProjects {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.projectDashboard__projectLine {
+  display: flex;
+  flex-direction: row;
+  height: 50px;
 }
 
 .nav {
