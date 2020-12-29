@@ -48,7 +48,7 @@ class ProjectController extends Controller
     public function store(Request $request)
     {
 
-        Project::create(request()->validate([
+        $projectData = request()->validate([
             'title'         => 'required|min:5|max:60',
             'keywords'      => 'required',
             'live_link'     => 'nullable|url|unique:table,column,except,id',
@@ -56,8 +56,14 @@ class ProjectController extends Controller
             'slug'          => 'required|alpha_dash',
             'active'        => 'sometimes',
             'content'       => 'required',
-            'published_date'=> 'required'
-        ]));
+            'published_date'=> 'required',
+            'thumbnail_image' => 'image'
+        ]);
+
+        $newThumbName = $projectData['thumbnail_image']->store('public/project_images/thumbnails');
+        $projectData['thumbnail_image'] = $newThumbName;
+
+        Project::create($projectData);
     }
 
     /**

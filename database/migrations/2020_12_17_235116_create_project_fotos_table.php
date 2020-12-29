@@ -16,7 +16,6 @@ class CreateProjectFotosTable extends Migration
         Schema::create('project_fotos', function (Blueprint $table) {
             $table->id();
             $table->string('link');
-            $table->boolean('thumbnail');
             $table->foreignId('project_id');
         });
     }

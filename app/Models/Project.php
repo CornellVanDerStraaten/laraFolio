@@ -23,7 +23,8 @@ class Project extends Model
         'slug',
         'content',
         'active',
-        'published_date'
+        'published_date',
+        'thumbnail_image'
     ];
 
     /**

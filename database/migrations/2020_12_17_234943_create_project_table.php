@@ -21,6 +21,7 @@ class CreateProjectTable extends Migration
             $table->string('slug');
             $table->string('live_link')->nullable();
             $table->string('github_link')->nullable();
+            $table->string('thumbnail_image');
             $table->boolean('active')->default(true);
             $table->date('published_date')->nullable();
             $table->timestamps();
