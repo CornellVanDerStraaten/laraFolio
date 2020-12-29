@@ -50,8 +50,10 @@
         @error('content')
             <p style="color: white">{{ $message }}</p>
         @enderror
-        <label for="checkbox">Publish meteen?</label>
-        <input type="checkbox" id="checkbox" name="active" checked>
+        <select name="active">
+            <option value="1">Publiceer</option>
+            <option value="0">Verberg</option>
+        </select>
         @error('active')
             <p style="color: white">{{ $message }}</p>
         @enderror
