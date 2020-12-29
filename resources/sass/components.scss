@@ -12,3 +12,23 @@
         border: none !important;
     }
 }
+.no-margin {
+    margin: 0;
+}
+
+.dashboardHello {
+    font-family: 'Nunito', sans-serif;
+    font-size: 26px;
+    margin-bottom: 5px;
+    &-subtext {
+        color: $nonActiveLink;
+        font-family: 'Nunito', sans-serif;
+        font-size: 16px;
+        margin-top: 0;
+    }
+}
+.dashboard-buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}

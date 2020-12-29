@@ -1,0 +1,44 @@
+.projectDashboard {
+    &__div {
+        margin: 0 5vw;
+    }
+    &__topLine {
+        font-family: 'Montserrat', sans-serif;
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-between;
+        &-button {
+            margin: 0;
+            display: flex;
+            align-items: center;
+            color: white;
+            text-decoration: none;
+            & > p {
+                text-transform: uppercase;
+            }
+        }
+        &-delete {
+            color: white;
+            text-transform: uppercase;
+            cursor: pointer;
+            font-weight: 500;
+            transition: .2s ease-in-out;
+            display: flex;
+            align-items: center;
+            &:hover {
+                color: red;
+            }
+        }
+    }
+    &__allProjects {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    &__projectLine {
+        display: flex;
+        flex-direction: row;
+        height: 50px;
+    }
+}
