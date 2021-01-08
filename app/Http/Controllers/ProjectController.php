@@ -53,14 +53,14 @@ class ProjectController extends Controller
             'keywords'      => 'required',
             'live_link'     => 'nullable|url|unique:table,column,except,id',
             'github_link'   => 'nullable|url',
-            'slug'          => 'required|alpha_dash',
+            'slug'          => 'required|alpha_dash|unique:projects,slug',
             'active'        => 'sometimes',
             'content'       => 'required',
             'published_date'=> 'required',
             'thumbnail_image' => 'image'
         ]);
 
-        $newThumbName = $projectData['thumbnail_image']->store('public/project_images/thumbnails');
+        $newThumbName = $projectData['thumbnail_image']->store('project_images/thumbnails', 'public');
         $projectData['thumbnail_image'] = $newThumbName;
 
         Project::create($projectData);

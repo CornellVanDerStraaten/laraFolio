@@ -1,0 +1,71 @@
+// CREATE PROJECTS
+.createProject__container {
+    margin: 0 15%;
+}
+.cp {
+    &__form {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    }
+    &__top {
+        grid-column: 1/6;
+        grid-row: 1/2;
+        display: flex;
+        flex-direction: column;
+    }
+    &__thumb-holder {
+        grid-column: 1/6;
+        grid-row: 2/3;
+    }
+    &__extra-info {
+        grid-column: 5/6;
+        grid-row: 3/4;
+        background-color: lighten($color: $bg, $amount: 10);
+    }
+    &__content {
+        grid-column: 1/5;
+        grid-row: 3/4;
+    }
+    &__extra-images {
+        grid-column: 1/6;
+        grid-row: 4/5;
+    }
+    &__submit {
+        grid-column: 1/6;
+        grid-row: 5/6;
+    }
+    &__input {
+        color: white;
+        font-family: 'Montserrat', sans-serif;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        font-size: 20px;
+        width: 100%;
+        padding: 10px;
+        padding-left: 0px;
+        font-weight: 500;
+
+        &:focus {
+            outline: none;
+        }
+        &::placeholder {
+            color: $nonActiveLink;
+        }
+    }
+    &__link-inputs {
+        display: flex;
+        flex-direction: row;
+    }
+    &__link
+    &__title-input {
+        padding-bottom: 0;
+        font-size: 50px;
+    }
+    &__keyword-input {
+        padding-top: 0;
+        font-size: 20px;
+        color: $nonActiveLink;
+    }
+}

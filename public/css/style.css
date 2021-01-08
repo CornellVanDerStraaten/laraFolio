@@ -267,6 +267,10 @@ table {
   font-size: 60px;
 }
 
+.row {
+  width: 300px;
+}
+
 .voorbeeld-table {
   font-family: "Montserrat", sans-serif;
   display: flex;
@@ -295,7 +299,13 @@ table {
 .adminNav__card {
   border: 2px solid rgba(255, 255, 255, 0.329);
   border-radius: 15px;
-  box-shadow: 5px 5px 10px rgba(231, 231, 231, 0.384);
+  box-shadow: 0px 5px 0px rgba(231, 231, 231, 0.384);
+  transition: 0.15s ease-in-out;
+}
+
+.adminNav__card:hover {
+  box-shadow: 0px 1px 0px rgba(231, 231, 231, 0.384);
+  transform: translateY(4px);
 }
 
 .adminNav__card-header {
@@ -415,6 +425,94 @@ table {
   display: flex;
   flex-direction: row;
   height: 50px;
+}
+
+.createProject__container {
+  margin: 0 15%;
+}
+
+.cp__form {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+}
+
+.cp__top {
+  grid-column: 1/6;
+  grid-row: 1/2;
+  display: flex;
+  flex-direction: column;
+}
+
+.cp__thumb-holder {
+  grid-column: 1/6;
+  grid-row: 2/3;
+}
+
+.cp__extra-info {
+  grid-column: 5/6;
+  grid-row: 3/4;
+  background-color: #4b4b4b;
+}
+
+.cp__content {
+  grid-column: 1/5;
+  grid-row: 3/4;
+}
+
+.cp__extra-images {
+  grid-column: 1/6;
+  grid-row: 4/5;
+}
+
+.cp__submit {
+  grid-column: 1/6;
+  grid-row: 5/6;
+}
+
+.cp__input {
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  font-size: 20px;
+  width: 100%;
+  padding: 10px;
+  padding-left: 0px;
+  font-weight: 500;
+}
+
+.cp__input:focus {
+  outline: none;
+}
+
+.cp__input::-moz-placeholder {
+  color: #CCCCCC;
+}
+
+.cp__input:-ms-input-placeholder {
+  color: #CCCCCC;
+}
+
+.cp__input::placeholder {
+  color: #CCCCCC;
+}
+
+.cp__link-inputs {
+  display: flex;
+  flex-direction: row;
+}
+
+.cp__link .cp__title-input {
+  padding-bottom: 0;
+  font-size: 50px;
+}
+
+.cp__keyword-input {
+  padding-top: 0;
+  font-size: 20px;
+  color: #CCCCCC;
 }
 
 .nav {
