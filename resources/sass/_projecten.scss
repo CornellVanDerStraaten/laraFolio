@@ -21,8 +21,10 @@
         grid-row: 2/3;
         height: 40vw;
         max-height: 650px;
-        background-image: url('https://via.placeholder.com/150');
-        }
+        background: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
         &-input {
             display: flex;
             align-self: center;
@@ -54,8 +56,10 @@
     }
     &__extra-image {
         border: 1px solid black;
-        background-image: url('https://via.placeholder.com/150');
         min-height: 20vw;
+        background: no-repeat;
+        background-size: cover;
+        background-position: center;
     }
     &__submit {
         grid-column: 1/6;

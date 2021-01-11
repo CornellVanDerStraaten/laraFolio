@@ -43,9 +43,9 @@
             </div>
         </div>
 
-        <div class="cp__thumb-holder">
+        <div class="cp__thumb-holder" id="thumb_background" style="background-image: url('https://via.placeholder.com/150');">
             {{-- Thumbnail Image Input --}}
-            <input type="file" class="cp__thumb-input" name="thumbnail_image">
+            <input type="file" class="cp__thumb-input" name="thumbnail_image" onchange="loadFile(event, 'thumb')">
             @error('thumbnail_image')
                 <p style="color: white">{{ $message }}</p>
             @enderror
@@ -101,25 +101,25 @@
         </div>
 
         <div class="cp__extra-images">
-            <div class="cp__extra-image">
+            <div class="cp__extra-image" style="background-image: url('https://via.placeholder.com/150');" id="extra_project_image_left">
                 {{-- Extra Image Input --}}
-                <input type="file" class="cp__extra-input" name="project_image[1]">
+                <input type="file" class="cp__extra-input" name="project_image[1]"  onchange="loadFile(event, 'extra_left')">
                 @error('project_image[]')
                     <p style="color: white">{{ $message }}</p>
                 @enderror
             </div>
 
-            <div class="cp__extra-image">
+            <div class="cp__extra-image" style="background-image: url('https://via.placeholder.com/150');" id="extra_project_image_middle">
                 {{-- Extra Image Input --}}
-                <input type="file" class="cp__extra-input" name="project_image[2]">
+                <input type="file" class="cp__extra-input" name="project_image[2]"  onchange="loadFile(event, 'extra_middle')">
                 @error('project_image[]')
                     <p style="color: white">{{ $message }}</p>
                 @enderror
             </div>
 
-            <div class="cp__extra-image">
+            <div class="cp__extra-image "style="background-image: url('https://via.placeholder.com/150');" id="extra_project_image_right">
                 {{-- Extra Image Input --}}
-                <input type="file" class="cp__extra-input" name="project_image[3]">
+                <input type="file" class="cp__extra-input" name="project_image[3]"  onchange="loadFile(event, 'extra_right')">
                 @error('project_image[]')
                     <p style="color: white">{{ $message }}</p>
                 @enderror
@@ -144,5 +144,27 @@ footer-relative
         .catch( error => {
             console.error( error );
         } );
+
+        let loadFile = function(event, whichImage) {
+            let image;
+            // Get which element needs to be filled with inserted background
+            switch (whichImage) {
+            case 'thumb':
+                image = document.getElementById('thumb_background');
+                break;
+            case 'extra_left':
+                image = document.getElementById('extra_project_image_left');
+                break;
+            case 'extra_middle':
+                image = document.getElementById('extra_project_image_middle');
+                break;
+            case 'extra_right':
+                image = document.getElementById('extra_project_image_right');
+                break;
+            }
+
+            // Set background image
+            image.style.backgroundImage = 'url('+ URL.createObjectURL(event.target.files[0]) +')';
+        };
 </script>
 @endsection

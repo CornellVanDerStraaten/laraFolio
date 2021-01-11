@@ -450,7 +450,9 @@ table {
   grid-row: 2/3;
   height: 40vw;
   max-height: 650px;
-  background-image: url("https://via.placeholder.com/150");
+  background: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 .cp__thumb-input {
@@ -489,8 +491,10 @@ table {
 
 .cp__extra-image {
   border: 1px solid black;
-  background-image: url("https://via.placeholder.com/150");
   min-height: 20vw;
+  background: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 .cp__submit {
@@ -566,6 +570,7 @@ table {
 
 .nav__wrapper {
   margin: 20px 20px;
+  margin-bottom: 0 !important;
   display: flex;
   justify-content: space-between;
 }
