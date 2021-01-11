@@ -15,7 +15,7 @@ class ProjectController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        // $this->middleware('auth');
     }
 
 
@@ -47,7 +47,10 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
+        // Only usable for logged in users
+        $this->middleware('auth');
 
+        // Validating entered info
         $projectData = request()->validate([
             'title'         => 'required|min:5|max:60',
             'keywords'      => 'required',
@@ -60,6 +63,7 @@ class ProjectController extends Controller
             'thumbnail_image' => 'image'
         ]);
 
+        // Storing thumbnail into laravel Storage
         $newThumbName = $projectData['thumbnail_image']->store('project_images/thumbnails', 'public');
         $projectData['thumbnail_image'] = $newThumbName;
 
