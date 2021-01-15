@@ -23,8 +23,6 @@ class AdminController extends Controller
     }
 
     public function toProjectDashboard() {
-
-
         return view('adminProjectDashboard', ['projects' => Project::all()]);
     }
 }

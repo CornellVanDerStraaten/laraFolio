@@ -94,7 +94,7 @@
 
         <div class="cp__content">
             {{-- Textarea --}}
-            <textarea class="cp__content-textarea" name="content" id="editorProjects" cols="30" rows="10" value="{{ old('content') }}" required autocomplete="off"></textarea>
+            <textarea class="cp__content-textarea" name="content" id="editorProjects" cols="30" rows="10" value="{{ old('content') }}" autocomplete="off"></textarea>
             @error('content')
                 <p style="color: white">{{ $message }}</p>
             @enderror
