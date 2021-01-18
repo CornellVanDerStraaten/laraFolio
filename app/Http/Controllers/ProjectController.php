@@ -65,7 +65,7 @@ class ProjectController extends Controller
         ]);
 
         // Giving all images, storing one by one, returning array with all new image names
-        $this->storeProjectImages($request->project_image);
+        $this->storeImages($request->project_image, 'project_images');
 
         // Store thumb image seperately
         $newThumbName = $projectData['thumbnail_image']->store('project_images/thumbnails', 'public');
@@ -75,29 +75,6 @@ class ProjectController extends Controller
         Project::create($projectData);
     }
 
-
-    /**
-     * Giving all images, storing one by one, returning array with all new image names
-     *
-     * Idea for later: Make this function for every image on the site with switch statement?
-     */
-    public function storeProjectImages($images)
-    {
-        // Init image name storage array
-        $newImageNames = [];
-
-        // Loop through every image, store it, push new image name to array $newImageNames[]
-        foreach ($images as $image) {
-            // Store image in project_images folder
-            $newName = $image->store('project_images', 'public');
-            $image = $newName;
-
-            // Send to array
-            array_push($newImageNames, $image);
-        }
-
-        return $newImageNames;
-    }
 
     /**
      * Display the specified resource.
