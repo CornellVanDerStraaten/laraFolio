@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateProjectFotosTable extends Migration
+class CreateFotosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,9 @@ class CreateProjectFotosTable extends Migration
      */
     public function up()
     {
-        Schema::create('project_fotos', function (Blueprint $table) {
+        Schema::create('fotos', function (Blueprint $table) {
             $table->id();
             $table->string('link');
-            $table->foreignId('project_id');
         });
     }
 
@@ -27,6 +26,6 @@ class CreateProjectFotosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('project_fotos');
+        Schema::dropIfExists('fotos');
     }
 }
