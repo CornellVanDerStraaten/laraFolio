@@ -53,13 +53,13 @@
 
         <div class="cp__extra-info">
             {{-- Developers Input --}}
-            <input class="cp__input cp__developers-input" type="text" name="developers" placeholder="Developers" value="{{ old('developers') }}" required autocomplete="off">
+            <input class="cp__input cp__developers-input" type="text" name="developers" placeholder="Developers" value="{{ old('developers') }}" autocomplete="off">
             @error('slug')
                 <p style="color: white">{{ $message }}</p>
             @enderror
 
             {{-- Vormgevers Input --}}
-            <input class="cp__input cp__vormgevers-input" type="text" name="vormgevers" placeholder="Vormgevers" value="{{ old('vormgevers') }}" required autocomplete="off">
+            <input class="cp__input cp__vormgevers-input" type="text" name="vormgevers" placeholder="Vormgevers" value="{{ old('vormgevers') }}" autocomplete="off">
             @error('vormgevers')
                 <p style="color: white">{{ $message }}</p>
             @enderror
