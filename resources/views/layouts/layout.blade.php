@@ -53,7 +53,8 @@
         @show
     </main>
 
-    <footer class="footer">
+    {{-- If page content longer than viewport height, add 'footer-relative' in this section --}}
+    <footer class="footer @section('footer-position')@show">
         <div class="footer__socials">
             <span class="footer__socials-background"><a href="#"><i class="fab fa-linkedin-in"></i></a></span>
             <span class="footer__socials-background"><a href="#"><i class="fab fa-github"></i></a></span>

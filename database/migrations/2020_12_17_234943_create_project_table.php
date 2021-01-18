@@ -21,6 +21,9 @@ class CreateProjectTable extends Migration
             $table->string('slug');
             $table->string('live_link')->nullable();
             $table->string('github_link')->nullable();
+            $table->string('developers')->default('Cornell van der Straaten');
+            $table->string('vormgevers')->default('Cornell van der Straaten');
+            $table->string('taal')->default('Nederlands');
             $table->string('thumbnail_image');
             $table->boolean('active')->default(true);
             $table->date('published_date')->nullable();

@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+
 class Project extends Model
 {
     use HasFactory;
@@ -24,7 +25,10 @@ class Project extends Model
         'content',
         'active',
         'published_date',
-        'thumbnail_image'
+        'thumbnail_image',
+        'developers',
+        'vormgevers',
+        'taal'
     ];
 
     /**
@@ -34,4 +38,13 @@ class Project extends Model
     {
         return 'slug';
     }
+
+    /**
+     * The images that belong to projects.
+     */
+    public function images() {
+        return $this->belongsToMany(Foto::class, 'foto_project', 'project_id', 'image_id');
+    }
+
+
 }

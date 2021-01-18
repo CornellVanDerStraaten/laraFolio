@@ -1,6 +1,7 @@
 @extends('layouts.layout')
 
 @section('content')
+    <?php use App\Models\Project; ?>
 <div class="projectDashboard__div">
     <div class="projectDashboard__topLine">
         <div class="dashboard__hello-div">
@@ -14,10 +15,12 @@
     </div>
     {{-- Hier komen nog project statistieken, bijvoorbeeld hoeveel bezoekers etc --}}
     <div class="projectDashboard__allProjects">
+
         @foreach($projects as $project)
         <div class="projectCard">
             <div class="projectCard__image-holder">
                 <img src="#" alt="Een foto van het project: {{ $project->title }}">
+
             </div>
             <div class="projectCard_card-info">
 

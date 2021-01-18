@@ -2,6 +2,7 @@
     font-family: 'Montserrat', sans-serif;
     &__wrapper {
         margin: 20px 20px;
+        margin-bottom: 0 !important;
         display: flex;
         justify-content: space-between;
         &-logo {
@@ -163,6 +164,9 @@
         font-size: 12px;
         margin-top: 5px;
     }
+}
+.footer-relative {
+    position: relative !important;
 }
 
 
