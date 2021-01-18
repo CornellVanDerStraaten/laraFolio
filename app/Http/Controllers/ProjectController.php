@@ -64,15 +64,22 @@ class ProjectController extends Controller
             'thumbnail_image' => 'image'
         ]);
 
-        // Giving all images, storing one by one, returning array with all new image names
-        $this->storeImages($request->project_image, 'project_images');
-
         // Store thumb image seperately
-        $newThumbName = $projectData['thumbnail_image']->store('project_images/thumbnails', 'public');
-        $projectData['thumbnail_image'] = $newThumbName;
+        $thumbName = $this->storeImages($projectData['thumbnail_image'], 'project_images/thumbnails');
+        // Reassigning thumbnail image
+        $projectData['thumbnail_image'] = $thumbName[0];
 
-
+        /**
+         * Insert project before extra images
+         * Storage of extra images requires id of new project
+         */
         Project::create($projectData);
+
+        // Giving all images, storing one by one, put into foto_project (many to many) table, returning array with all new image names
+        $extraImages = $this->storeImages($request->project_image, 'project_images');
+        $this->insertImages($extraImages);
+
+        return redirect('/admin/projecten');
     }
 
 

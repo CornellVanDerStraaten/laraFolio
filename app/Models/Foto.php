@@ -9,6 +9,7 @@ class Foto extends Model
 {
     use HasFactory;
 
+    public $timestamps = false;
     protected $fillable = ['id', 'link'];
 
     public function projects() {

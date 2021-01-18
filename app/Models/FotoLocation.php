@@ -10,6 +10,9 @@ class FotoLocation extends Model
 {
     use HasFactory;
 
+    public $timestamps = false;
+
+    protected $table = "foto_project";
     protected $fillable = ['id', 'project_id', 'image_id'];
 
 
