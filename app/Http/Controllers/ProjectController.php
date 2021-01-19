@@ -8,14 +8,14 @@ use Illuminate\Http\Request;
 class ProjectController extends Controller
 {
 
-     /**
+    /**
      * Create a new controller instance.
      *
      * @return void
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        // $this->middleware('auth');
     }
 
 
@@ -42,34 +42,51 @@ class ProjectController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
+        // Only usable for logged in users
+        $this->middleware('auth');
 
+
+        // Validating entered info
         $projectData = request()->validate([
-            'title'         => 'required|min:5|max:60',
-            'keywords'      => 'required',
-            'live_link'     => 'nullable|url|unique:table,column,except,id',
-            'github_link'   => 'nullable|url',
-            'slug'          => 'required|alpha_dash|unique:projects,slug',
-            'active'        => 'sometimes',
-            'content'       => 'required',
-            'published_date'=> 'required',
+            'title' => 'required|min:5|max:60',
+            'keywords' => 'required',
+            'live_link' => 'nullable|url|unique:table,column,except,id',
+            'github_link' => 'nullable|url',
+            'slug' => 'required|alpha_dash|unique:projects,slug',
+            'active' => 'sometimes',
+            'content' => 'required',
+            'published_date' => 'required',
             'thumbnail_image' => 'image'
         ]);
 
-        $newThumbName = $projectData['thumbnail_image']->store('project_images/thumbnails', 'public');
-        $projectData['thumbnail_image'] = $newThumbName;
+        // Store thumb image seperately
+        $thumbName = $this->storeImages($projectData['thumbnail_image'], 'project_images/thumbnails');
+        // Reassigning thumbnail image
+        $projectData['thumbnail_image'] = $thumbName[0];
 
+        /**
+         * Insert project before extra images
+         * Storage of extra images requires id of new project
+         */
         Project::create($projectData);
+
+        // Giving all images, storing one by one, put into foto_project (many to many) table, returning array with all new image names
+        $extraImages = $this->storeImages($request->project_image, 'project_images');
+        $this->insertImages($extraImages);
+
+        return redirect('/admin/projecten');
     }
+
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -80,7 +97,7 @@ class ProjectController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -91,8 +108,8 @@ class ProjectController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -103,7 +120,7 @@ class ProjectController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)

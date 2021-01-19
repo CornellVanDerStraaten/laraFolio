@@ -434,7 +434,7 @@ table {
 .cp__form {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto auto auto auto auto;
 }
 
 .cp__top {
@@ -445,14 +445,31 @@ table {
 }
 
 .cp__thumb-holder {
+  display: flex;
   grid-column: 1/6;
   grid-row: 2/3;
+  height: 40vw;
+  max-height: 650px;
+  background: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.cp__thumb-input {
+  display: flex;
+  align-self: center;
+  margin: 0 auto;
 }
 
 .cp__extra-info {
   grid-column: 5/6;
   grid-row: 3/4;
+  padding: 20px;
   background-color: #4b4b4b;
+}
+
+.cp__extra-info :nth-child(1) {
+  padding-top: 0;
 }
 
 .cp__content {
@@ -460,14 +477,40 @@ table {
   grid-row: 3/4;
 }
 
+.cp__content-textarea {
+  height: 100%;
+}
+
 .cp__extra-images {
   grid-column: 1/6;
   grid-row: 4/5;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 5%;
+}
+
+.cp__extra-image {
+  border: 1px solid black;
+  min-height: 20vw;
+  background: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 .cp__submit {
   grid-column: 1/6;
   grid-row: 5/6;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  margin: 50px;
+}
+
+.cp__submit-button {
+  color: white;
+  margin: 0 auto;
+  border: none;
+  font-size: 20px;
 }
 
 .cp__input {
@@ -504,7 +547,7 @@ table {
   flex-direction: row;
 }
 
-.cp__link .cp__title-input {
+.cp__title-input {
   padding-bottom: 0;
   font-size: 50px;
 }
@@ -515,12 +558,19 @@ table {
   color: #CCCCCC;
 }
 
+.ck-editor__editable_inline {
+  min-height: 450px;
+  font-family: "Montserrat";
+  background-color: transparent !important;
+}
+
 .nav {
   font-family: "Montserrat", sans-serif;
 }
 
 .nav__wrapper {
   margin: 20px 20px;
+  margin-bottom: 0 !important;
   display: flex;
   justify-content: space-between;
 }
@@ -728,5 +778,9 @@ table {
 .footer__copyright {
   font-size: 12px;
   margin-top: 5px;
+}
+
+.footer-relative {
+  position: relative !important;
 }
 
