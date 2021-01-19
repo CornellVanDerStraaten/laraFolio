@@ -32,3 +32,15 @@
     flex-direction: row;
     gap: 20px;
 }
+
+.component__tussentitel {
+    font-family: 'Montserrat', sans-serif;
+    &-titel {
+        font-size: 50px;
+        margin-bottom: 0;
+        font-weight: 500;
+    }
+    &-ondertitel-houder {
+        display: flex;
+    }
+}

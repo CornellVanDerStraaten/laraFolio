@@ -75,6 +75,7 @@ table {
         text-transform: uppercase;
         font-weight: 500;
         transition: .25s ease-in-out;
+        color: white;
         &:hover {
             cursor: pointer;
             background: linear-gradient(45deg, darken($primary, 10), darken($secondary, 10));

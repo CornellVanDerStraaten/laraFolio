@@ -59,6 +59,20 @@ main {
   gap: 20px;
 }
 
+.component__tussentitel {
+  font-family: "Montserrat", sans-serif;
+}
+
+.component__tussentitel-titel {
+  font-size: 50px;
+  margin-bottom: 0;
+  font-weight: 500;
+}
+
+.component__tussentitel-ondertitel-houder {
+  display: flex;
+}
+
 .loginAligner {
   height: 60vh;
   display: flex;
@@ -336,6 +350,7 @@ table {
   text-transform: uppercase;
   font-weight: 500;
   transition: 0.25s ease-in-out;
+  color: white;
 }
 
 .home__header-cta:hover {
