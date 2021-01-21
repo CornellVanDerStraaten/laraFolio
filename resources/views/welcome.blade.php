@@ -44,8 +44,9 @@
                     gestart waar wij wordpress websites en hosting opzetten
                     en ook SEO verzorgen.
                 </p>
+                <img src="{{ asset('img/cornell-image.png') }}" class="home__overMij-img">
             </div>
-            <img src="{{ asset('img/cornell-image.png') }}" class="home__overMij-img">
+
         </div>
     </div>
 
