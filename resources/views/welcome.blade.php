@@ -50,16 +50,34 @@
         </div>
     </div>
 
-    <h1>Projecten</h1>
-    <table>
-    @foreach($projects as $project)
-    <tr class="voorbeeld-table">
-        <td class="row"><h2>{{ $project->title }}</h2></td>
-        <td><h2>Gepubliceerd op: {{ $project->published_date }}</h2></td>
-        <td><a href="/project/{{ $project->slug }}" class="voorbeeld-link a-tag_component nav-button">Lees meer</a></td>
-    </tr>
-    @endforeach
-    </table>
+    <div class="home__projects">
+        <div class="component__tussentitel">
+            <h2 class="component__tussentitel-titel">Mijn werk.</h2>
+            <span class="component__tussentitel-ondertitel-houder">
+                <hr class="component__tussentitel-hr hr">
+                <h3 class="component__tussentitel-ondertitel">
+                    Ontdek wat ik kan
+                </h3>
+                <hr class="component__tussentitel-hr hr">
+            </span>
+        </div>
+
+        <div class="home__projects-section">
+            @foreach($projects as $project)
+                <div class="home__project">
+                    <div class="home__project-imgContainer">
+                        <img src="{{ asset('storage/' . $project->thumbnail_image) }}" class="home__project-imgContainer-img">
+                    </div>
+                    <div class="home__project-info">
+                        <h3 class="home__project-info-title" >{{ $project->title }}</h3>
+                        <p class="home__project-info-keywords">{{ $project->keywords }}</p>
+                        <button class="home__project-info-button nav-button">Lees meer</button>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+    </div>
+
 @endsection
 
 @section('footer-position')

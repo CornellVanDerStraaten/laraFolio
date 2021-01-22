@@ -188,6 +188,7 @@ table {
         min-width: 600px;
         padding-left: 25vw;
         position: relative;
+        padding-bottom: 100px;
     }
     &-titel {
         font-size: 30px;
@@ -271,5 +272,9 @@ table {
             font-size: 12px;
         }
     }
+}
+
+.home__project-imgContainer-img {
+    width: 50px;
 }
 
