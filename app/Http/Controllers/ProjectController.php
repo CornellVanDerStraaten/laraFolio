@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Foto;
+use App\Models\FotoLocation;
 use App\Models\Project;
 use Illuminate\Http\Request;
 
@@ -82,18 +84,6 @@ class ProjectController extends Controller
         return redirect('/admin/projecten');
     }
 
-
-    /**
-     * Display the specified resource.
-     *
-     * @param int $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
     /**
      * Show the form for editing the specified resource.
      *
@@ -123,8 +113,17 @@ class ProjectController extends Controller
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($slug)
     {
-        //
+        // Find project attached to slug
+        $toDelete = Project::where('slug', $slug)->first();
+
+        // Delete foto_locations where project id is ToDelete
+        $toDelete->images()->detach();
+
+        // Delete self
+        $toDelete->delete();
+
+        return redirect('admin/projecten');
     }
 }
