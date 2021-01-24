@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="533.333" height="533.333" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+ <title>Arrow</title>
+
+ <g>
+  <title>Layer 1</title>
+  <g transform="matrix(-1 1.22461e-016 -1.22461e-016 -1 501.24 504.353)" id="g661">
+   <path d="m104.052132,237.072403l337.889793,-1.119003l0,33.56601l-337.889793,2.237l0,-34.684006z" stroke-width="1pt" stroke="#7f7f7f" fill-rule="evenodd" fill="#7f7f7f" id="path648"/>
+   <path d="m407.257721,200.150391l54.822998,51.46701l-51.465973,55.941986l-3.357025,-107.408997z" stroke-width="1pt" stroke="#7f7f7f" fill-rule="evenodd" fill="#7f7f7f" id="path649"/>
+   <path d="m36.921738,199.031403l52.585503,53.705002l-51.466602,53.703995l34.684002,-1.118988l53.704102,-53.70401l-52.585205,-51.46701c1.118805,0 -33.565296,-1.118988 -36.921799,-1.118988z" stroke-width="1pt" stroke="#7f7f7f" fill-rule="evenodd" fill="#7f7f7f" id="path650"/>
+   <path d="m106.289902,199.031403l52.585495,53.705002l-51.466599,53.703995l16.7826,-1.118988l52.585503,-53.70401l-53.7043,-52.585999c1.118797,0 -13.426193,0 -16.7827,0z" stroke-width="1pt" stroke="#7f7f7f" fill-rule="evenodd" fill="#7f7f7f" id="path660"/>
+  </g>
+ </g>
+</svg>

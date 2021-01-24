@@ -263,7 +263,82 @@ table {
         }
     }
 }
+
+.home__projects-section {
+    margin-bottom: 40px;
+}
+.home__projects {
+    margin-top: 6vw;
+}
+.home__project {
+    width: 95%;
+    height: 85%;
+    max-width: 425px;
+    margin: 0 auto;
+    background-color: white;
+    &-imgContainer {
+        width: 100%;
+        height: 66%;
+        &-img {
+            display: block;
+            margin: 0 auto;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    &-info {
+        text-align: center;
+        font-family: 'Montserrat', sans-serif;
+        background-color: white;
+        padding-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+        align-content: space-between;
+        &-title {
+            color: black;
+            margin-bottom: 0;
+        }
+        &-keywords {
+            color: $darkText;
+        }
+        &-button-positioner {
+            padding-top: 15px;
+        }
+        &-button {
+            font-family: 'Nunito', sans-serif;
+            text-decoration: none;
+            color: white;
+            text-transform: uppercase;
+        }
+    }
+}
+.owl-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.owl-prev:focus, .owl-next:focus, .owl-prev:hover, .owl-next:hover {
+    outline: none;
+    background: transparent !important;
+}
+.owl-next {
+    width: 100px;
+}
+.carousel-arrow-prev {
+    width: 100px !important;
+}
+.carousel-arrow-next {
+    transform: scaleX(-1);
+    width: 100px !important;
+}
+.owl-dot.active span {
+    background: linear-gradient(45deg, $primary, $secondary) !important;
+}
+
 @media screen and (max-width: 900px) {
+
+    // Over Mij Query
     .home__overMij {
         &-img {
             min-height: 300px;
@@ -272,9 +347,7 @@ table {
             font-size: 12px;
         }
     }
-}
 
-.home__project-imgContainer-img {
-    width: 50px;
-}
+    // Home Projecten Query
 
+}
