@@ -1,5 +1,11 @@
 @extends('layouts.layout')
 
+@section('header-extra')
+    {{-- Lightweight Vanilla JS Carousel   --}}
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@2.4.21/dist/js/splide.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@2.4.21/dist/css/splide-core.min.css">
+@endsection
+
 @section('content')
     <header class="home__header">
         <div class="home__header-positioner">
@@ -62,21 +68,47 @@
             </span>
         </div>
 
-        <div class="home__projects-section">
-            @foreach($projects as $project)
-                <div class="home__project">
-                    <div class="home__project-imgContainer">
-                        <img src="{{ asset('storage/' . $project->thumbnail_image) }}" class="home__project-imgContainer-img">
-                    </div>
-                    <div class="home__project-info">
-                        <h3 class="home__project-info-title" >{{ $project->title }}</h3>
-                        <p class="home__project-info-keywords">{{ $project->keywords }}</p>
-                        <button class="home__project-info-button nav-button">Lees meer</button>
-                    </div>
-                </div>
-            @endforeach
+        <div class="home__projects-section splide">
+            <div class="splide__arrows">
+                <button class="splide__arrow splide__arrow--prev">
+                    Prev
+                </button>
+                <button class="splide__arrow splide__arrow--next">
+                    Next
+                </button>
+            </div>
+            <div class="splide__track">
+                <ul class="splide__list">
+                    @foreach($projects as $project)
+                        <li class="splide__slide">
+                            <div class="home__project">
+                                <div class="home__project-imgContainer">
+                                    <img src="{{  str_contains($project->thumbnail_image, 'via.') ? $project->thumbnail_image : asset('storage/' . $project->thumbnail_image) }}" class="home__project-imgContainer-img">
+                                </div>
+                                <div class="home__project-info">
+                                    <h3 class="home__project-info-title" >{{ $project->title }}</h3>
+                                    <p class="home__project-info-keywords">{{ $project->keywords }}</p>
+                                    <a class="home__project-info-button nav-button" href="{{ route('projecten.show', ['slug' => $project->slug])  }}">Lees meer</a>
+                                </div>
+                            </div>
+                        </li>
+                    @endforeach
+                </ul>
+            </div>
         </div>
     </div>
+
+@endsection
+
+@section('script')
+{{--  Init Carousel  --}}
+<script>
+    new Splide( '.splide', {
+        perPage: 3,
+        rewind : true,
+    } ).mount();
+</script>
+
 
 @endsection
 
