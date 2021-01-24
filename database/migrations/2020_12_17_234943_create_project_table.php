@@ -24,7 +24,7 @@ class CreateProjectTable extends Migration
             $table->string('developers')->default('Cornell van der Straaten');
             $table->string('vormgevers')->default('Cornell van der Straaten');
             $table->string('taal')->default('Nederlands');
-            $table->string('thumbnail_image');
+            $table->string('thumbnail_image')>nullable();
             $table->boolean('active')->default(true);
             $table->date('published_date')->nullable();
             $table->timestamps();
