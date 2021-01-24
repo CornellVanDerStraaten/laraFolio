@@ -40,6 +40,7 @@ Route::post('/projecten', 'ProjectController@store')->name('projects.store');
 Route::get('/project/{slug}', 'WebsiteController@showSpecificProject')->name('projecten.show');
 Route::get('/projecten/{slug}/aanpassen', 'ProjectController@edit')->name('projecten.edit');
 Route::delete('/projecten/{slug}', 'ProjectController@destroy')->name('projecten.destroy');
+Route::put('/projecten/{slug}', 'ProjectController@update')->name('projecten.update');
 
 
 
@@ -57,7 +58,6 @@ Route::delete('/projecten/{slug}', 'ProjectController@destroy')->name('projecten
  * Projecten
  * Route::get('/projecten', 'ProjectController@index')->name('projecten');
  * Route::get('/projecten/{slug}/aanpassen', 'ProjectController@edit')->name('projecten.edit');
- * Route::put('/projecten/{slug}', 'ProjectController@update')->name('projecten.update');
  * Route::delete('/projecten/{slug}', 'ProjectController@destroy')->name('projecten.destroy');
  *
  * Artikels

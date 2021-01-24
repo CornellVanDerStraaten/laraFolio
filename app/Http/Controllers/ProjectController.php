@@ -17,7 +17,7 @@ class ProjectController extends Controller
      */
     public function __construct()
     {
-        // $this->middleware('auth');
+         $this->middleware('auth');
     }
 
 
@@ -50,14 +50,14 @@ class ProjectController extends Controller
     public function store(Request $request)
     {
         // Only usable for logged in users
-        $this->middleware('auth');
+//        $this->middleware('auth');
 
 
         // Validating entered info
         $projectData = request()->validate([
             'title' => 'required|min:5|max:60',
             'keywords' => 'required',
-            'live_link' => 'nullable|url|unique:table,column,except,id',
+            'live_link' => 'nullable|url',
             'github_link' => 'nullable|url',
             'slug' => 'required|alpha_dash|unique:projects,slug',
             'active' => 'sometimes',
@@ -90,9 +90,9 @@ class ProjectController extends Controller
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Project $slug)
     {
-        //
+        return view('editProject', ['project' => $slug]);
     }
 
     /**
@@ -102,9 +102,48 @@ class ProjectController extends Controller
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $slug)
     {
-        //
+
+        // Validating entered info
+        $projectData = request()->validate([
+            'title' => 'required|min:5|max:60',
+            'keywords' => 'required',
+            'live_link' => 'nullable|url',
+            'github_link' => 'nullable|url',
+            'slug' => 'required|alpha_dash',
+            'active' => 'sometimes',
+            'content' => 'required',
+            'published_date' => 'required',
+        ]);
+        // If no new thumb, dont store it
+        if( !$request->thumbnail_image == null) {
+            // Store thumb image seperately
+            $thumbName = $this->storeImages($request['thumbnail_image'], 'project_images/thumbnails');
+            // Reassigning thumbnail image
+            $projectData['thumbnail_image'] = $thumbName[0];
+        }
+
+
+        $project = Project::where('slug', $slug)->first();
+
+        // There has to be a better way to do this
+        $project->update(
+            [
+                'title'         => $request['title'],
+                'keywords'      => $projectData['keywords'],
+                'live_link'     => $projectData['live_link'],
+                'github_link'   => $projectData['github_link'],
+                'active'        => $projectData['active'],
+                'content'       => $projectData['content'],
+                'published_date'=> $projectData['published_date'],
+                'slug'          => $projectData['slug'],
+                'developers'    => $request->developers,
+                'vormgevers'    => $request->vormgevers,
+                'thumbnail_image' => $projectData['thumbnail_image']
+            ]);
+
+        return redirect('/admin/projecten');
     }
 
     /**
