@@ -20,8 +20,8 @@ class CreateFotoProjectTable extends Migration
 
             $table->unique(['project_id', 'image_id']);
 
-            $table->foreign('project_id')->references('id')->on('projects');
-            $table->foreign('image_id')->references('id')->on('fotos');
+            $table->foreign('project_id')->references('id')->on('projects')->onDelete('cascade');
+            $table->foreign('image_id')->references('id')->on('fotos')->onDelete('cascade');
         });
     }
 
